@@ -4,6 +4,11 @@
 //  CallbackClass.cpp
 //...............................................................................
 CallbackClass::CallbackClass(){
+
+}
+
+void CallbackClass::handle(){
+  anyFunction();
 }
 
 //...............................................................................
@@ -18,6 +23,15 @@ void CallbackClass::set_callbacks(CallbackFunction Callback1,
 //  set callbacks
 //...............................................................................
 void CallbackClass::anyFunction(){
-  if (on_Callback1 != nullptr) on_Callback1();  //callback event
-  if (on_Callback2 != nullptr) on_Callback2();  //callback event
+  pinMode(12, INPUT_PULLUP);
+
+  if (!digitalRead(12)) {
+    //Serial.println("GPIO D6");
+    int pin = 12;
+    if (on_Callback1 != nullptr) on_Callback1(pin);  //callback event
+  }
+
+
+  //if (on_Callback1 != nullptr) on_Callback1();  //callback event
+  //if (on_Callback2 != nullptr) on_Callback2();  //callback event
 }

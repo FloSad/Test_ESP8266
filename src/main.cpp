@@ -12,6 +12,7 @@ GPIO gpio;
 
 void setup() {
   Serial.begin (115200);
+  Serial.println("");
   gpio.setup();
 
   int i = gpio.beCount;
@@ -25,5 +26,5 @@ void loop() {
 
 
 void machWas(){
-  
+
 }

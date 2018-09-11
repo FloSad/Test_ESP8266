@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <Wire.h>
+#include "CLASS.h"
 
 #define LED1 D7
 #define Button1 D6
@@ -13,7 +14,10 @@ public:
   void setCallback();
   int beCount = 2;
 
+  Master master;
+
 private:
+
 
   int privateVar = 0;
 

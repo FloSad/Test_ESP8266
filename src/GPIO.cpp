@@ -14,7 +14,7 @@ void GPIO::setup(){
 }
 
 void GPIO::handle(){
-
+  master.handle();
 
 }
 
